@@ -13,17 +13,18 @@ using namespace std;
 class Agence {
 
 private:
-    map<string,Client> listeClients;
+    map<string,Client *> listeClients;
     map<int,Bien> listeBiens;
 
 public:
   Agence();
-  Agence(map<string,Client> _listeClients/*, map<int,Bien> _listeBiens*/);
+  Agence(map<string,Client *> _listeClients/*, map<int,Bien> _listeBiens*/);
   Agence(const Agence &a);
   ~Agence();
-
+  void addClientByUser();//ajoute un client depuis la console
+  void addClientByFile();//ajoute un client par fichier texte
   void affiche();
-  Client getClient(string nom);
+  Client* getClient(string nom);
   Bien getBien(int id);
 };
 
